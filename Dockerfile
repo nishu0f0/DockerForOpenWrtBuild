@@ -6,7 +6,9 @@ ARG groupid
 ARG username
 
 #Please add your dependencies here
-RUN apt-get update && apt-get install -y git-core build-essential zip curl unzip python software-properties-common nano sudo
+# Some of them taken from https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem
+
+RUN apt-get update && apt-get install -y build-essential git-core git ccache ecj fastjar file g++ gawk gettext  java-propose-classpath libelf-dev libncurses5-dev libncursesw5-dev libssl-dev python python2.7-dev python3 unzip wget python-distutils-extra python3-setuptools python3-dev rsync subversion swig time xsltproc zlib1g-dev zip curl unzip  software-properties-common nano sudo
 
 
 # Create the user and groups same as host computer 
