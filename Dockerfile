@@ -17,7 +17,8 @@ RUN groupadd -g $groupid $username \
  && useradd -m -u $userid -g $groupid $username \
  && usermod -aG sudo $username \
  && echo $username >/root/username \
- && echo "export USER="$username >>/home/$username/.gitconfig
+ && export USER=$username \
+ && export USERNAME=$username
 
 
 COPY gitconfig /home/$username/.gitconfig
